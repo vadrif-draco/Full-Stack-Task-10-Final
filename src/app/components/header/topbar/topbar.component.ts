@@ -1,18 +1,18 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductActionsService } from '../../../services/product-actions.service';
 
 @Component({
-    selector: 'app-topbar',
-    templateUrl: './topbar.component.html',
-    styleUrls: ['./topbar.component.css']
+  selector: 'app-topbar',
+  templateUrl: './topbar.component.html',
+  styleUrls: ['./topbar.component.css'],
 })
 export class TopbarComponent implements OnInit {
+  //
+  constructor() {}
 
-    constructor() { }
+  ngOnInit(): void {}
 
-    ngOnInit(): void {
-    }
-
-    getOrdersNum(): Number {
-        return 3;
-    }
+  getOrdersNum(): number {
+    return 3;
+  }
 }

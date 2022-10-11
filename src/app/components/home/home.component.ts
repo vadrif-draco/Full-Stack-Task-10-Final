@@ -16,13 +16,12 @@ export class HomeComponent implements OnInit {
   recentProducts: Product[] = [];
   constructor(
     private categoriesService: CategoriesService,
-    private featuredProductsService: ProductsService,
-    private recentProductsService: ProductsService
+    private productsService: ProductsService
   ) {}
 
   ngOnInit(): void {
     this.categories = this.categoriesService.getCategories();
-    this.featuredProducts = this.featuredProductsService.getFeaturedProducts();
-    this.recentProducts = this.recentProductsService.getRecentProducts();
+    this.featuredProducts = this.productsService.getFeaturedProducts();
+    this.recentProducts = this.productsService.getRecentProducts();
   }
 }

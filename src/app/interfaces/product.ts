@@ -8,4 +8,6 @@ export interface Product {
   imageUrl: string;
   featured: boolean;
   recent: boolean;
+  color: string;
+  size: string;
 }

@@ -6,24 +6,33 @@
       [alt]="itemData.name"
     />
     <div class="product-action">
-      <a href="#" class="btn btn-outline-dark btn-square"
+      <a
+        (click)="productActionsService.addToCart(itemData)"
+        class="btn btn-outline-dark btn-square"
         ><i class="fa fa-shopping-cart"></i
       ></a>
-      <a href="#" class="btn btn-outline-dark btn-square"
-        ><i class="far fa-heart"></i
+      <a (click)="wishlistToggle()" class="btn btn-outline-dark btn-square"
+        ><i
+          class="fa-heart"
+          [ngClass]="wishlisted ? 'fa wishlisted' : 'far'"
+        ></i
       ></a>
-      <a href="#" class="btn btn-outline-dark btn-square"
+      <a class="btn btn-outline-dark btn-square"
         ><i class="fa fa-sync-alt"></i
       ></a>
-      <a href="#" class="btn btn-outline-dark btn-square"
+      <a
+        class="btn btn-outline-dark btn-square"
+        [routerLink]="['/', 'detail', itemData.id]"
         ><i class="fa fa-search"></i
       ></a>
     </div>
   </div>
   <div class="text-center py-4">
-    <a href="#" class="h6 text-decoration-none text-truncate">{{
-      itemData.name
-    }}</a>
+    <a
+      [routerLink]="['detail', itemData.id]"
+      class="h6 text-decoration-none text-truncate"
+      >{{ itemData.name }}</a
+    >
     <div class="d-flex align-items-center justify-content-center mt-2">
       <h5>{{ itemData.dprice | currency }}</h5>
       <h6 class="text-muted ml-2">

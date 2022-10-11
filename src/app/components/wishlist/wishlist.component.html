@@ -1,0 +1,20 @@
+<app-breadcrumb
+  [breadcrumb_items]="['Home', 'Shop', 'Wishlist']"
+></app-breadcrumb>
+
+<div class="container-fluid pt-5 pb-3">
+  <div class="row px-xl-5">
+    <app-wishlist-item
+      class="col-lg-3 col-md-4 col-sm-6 pb-1"
+      *ngFor="let item of wishlistedProducts"
+      [itemData]="item"
+      (wishlistChange)="reload()"
+    ></app-wishlist-item>
+  </div>
+  <div *ngIf="wishlistedProducts.length == 0">
+    <div class="text-center text-black my-5 w-100">
+      You have no products on your wishlist yet.<br />Click the
+      <i class="far fa-heart"></i> icon on any product in any page to add it.
+    </div>
+  </div>
+</div>

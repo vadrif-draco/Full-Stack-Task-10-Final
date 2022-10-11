@@ -1,0 +1,14 @@
+<div class="btn-group ml-2">
+  <button
+    type="button"
+    class="btn btn-sm btn-light dropdown-toggle"
+    data-toggle="dropdown"
+  >
+    Showing
+  </button>
+  <div class="dropdown-menu dropdown-menu-right">
+    <a class="dropdown-item" (click)="pageSizeChange.emit(3)">3</a>
+    <a class="dropdown-item" (click)="pageSizeChange.emit(6)">6</a>
+    <a class="dropdown-item" (click)="pageSizeChange.emit(9)">9</a>
+  </div>
+</div>

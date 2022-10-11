@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Product } from '../../../../interfaces/product';
+import { ProductActionsService } from '../../../../services/product-actions.service';
 
 @Component({
   selector: 'app-featured-item',
@@ -8,10 +9,22 @@ import { Product } from '../../../../interfaces/product';
 })
 export class FeaturedItemComponent implements OnInit {
   //
-  @Input() itemData: Product = {} as Product;
   math = Math;
+  wishlisted: boolean = false;
+  @Input() itemData: Product = {} as Product;
 
-  constructor() {}
+  constructor(protected productActionsService: ProductActionsService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.wishlisted = this.productActionsService.wishlist.includes(
+      this.itemData.id
+    );
+  }
+
+  wishlistToggle() {
+    this.wishlisted = !this.wishlisted;
+    if (this.wishlisted)
+      this.productActionsService.addToWishlist(this.itemData.id);
+    else this.productActionsService.removeFromWishlist(this.itemData.id);
+  }
 }

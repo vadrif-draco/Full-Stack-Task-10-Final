@@ -1,0 +1,28 @@
+<nav>
+  <ul class="pagination justify-content-center">
+    <li
+      class="page-item"
+      [class.disabled]="pageCurrent == 0"
+      (click)="updatePageCurrentNumber(pageCurrent - 1)"
+    >
+      <a class="page-link">Previous</a>
+    </li>
+
+    <li
+      class="page-item"
+      [class.active]="pageCurrent == i"
+      (click)="updatePageCurrentNumber(i)"
+      *ngFor="let n of [].constructor(numOfPages); let i = index"
+    >
+      <a class="page-link">{{ i + 1 }}</a>
+    </li>
+
+    <li
+      class="page-item"
+      [class.disabled]="pageCurrent == numOfPages - 1"
+      (click)="updatePageCurrentNumber(pageCurrent + 1)"
+    >
+      <a class="page-link">Next</a>
+    </li>
+  </ul>
+</nav>

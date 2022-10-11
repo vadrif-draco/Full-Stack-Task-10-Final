@@ -1,18 +1,17 @@
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
-    selector: 'app-breadcrumb',
-    templateUrl: './breadcrumb.component.html',
-    styleUrls: ['./breadcrumb.component.css']
+  selector: 'app-breadcrumb',
+  templateUrl: './breadcrumb.component.html',
+  styleUrls: ['./breadcrumb.component.css'],
 })
 export class BreadcrumbComponent implements OnInit {
+  //
+  @Input() breadcrumb_items: string[] = [];
+  constructor() {}
 
-    @Input()
-    breadcrumb_items: string[] = [];
-
-    constructor() { }
-
-    ngOnInit(): void {
-    }
-
+  ngOnInit(): void {}
+  lower(str: string): string {
+    return str.toLowerCase();
+  }
 }

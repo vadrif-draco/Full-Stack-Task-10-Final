@@ -1,1 +1,28 @@
-<p>detail works!</p>
+<ng-template [ngIf]="id != 'null'" [ngIfElse]="shop_detail">
+  <app-breadcrumb
+    [breadcrumb_items]="['Home', 'Shop', 'Product Details']"
+  ></app-breadcrumb>
+  <app-product-details [product]="product"></app-product-details>
+  <app-product-recommendations></app-product-recommendations>
+</ng-template>
+
+<ng-template #shop_detail>
+  <app-breadcrumb
+    [breadcrumb_items]="['Home', 'Shop', 'Shop Detail']"
+  ></app-breadcrumb>
+  <div class="text-center text-black my-5 w-100">
+    Hello! :)
+    <br />
+    <br />
+    I've made the decision that this page does not make sense.
+    <br />
+    <br />
+    Instead of opening this page from the navigation bar "Shop Detail" item,
+    <br />
+    click the <i class="fa fa-search"></i> icon on any product in any page to
+    open its custom product details page;
+    <br />
+    which shows this product's details instead of the template's meaningless
+    "Shop Detail" page.
+  </div>
+</ng-template>

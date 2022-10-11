@@ -1,10 +1,17 @@
 <div class="container-fluid">
-    <div class="row px-xl-5">
-        <div class="col-12">
-            <nav class="breadcrumb bg-light mb-30">
-                <a *ngFor="let breadcrum_item of breadcrumb_items.slice(0, -1)" class="breadcrumb-item text-dark" href="#">{{breadcrum_item}}</a>
-                <span class="breadcrumb-item active">{{breadcrumb_items[breadcrumb_items.length - 1]}}</span>
-            </nav>
-        </div>
+  <div class="row px-xl-5">
+    <div class="col-12">
+      <nav class="breadcrumb bg-light mb-30">
+        <a
+          *ngFor="let breadcrum_item of breadcrumb_items.slice(0, -1)"
+          class="breadcrumb-item text-dark"
+          [routerLink]="['/', lower(breadcrum_item)]"
+          >{{ breadcrum_item }}</a
+        >
+        <span class="breadcrumb-item active">{{
+          breadcrumb_items[breadcrumb_items.length - 1]
+        }}</span>
+      </nav>
     </div>
+  </div>
 </div>

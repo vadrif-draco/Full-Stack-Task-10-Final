@@ -1,13 +1,13 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Product } from '../../../../interfaces/product';
+import { Product } from 'src/app/interfaces/product';
 import { ProductActionsService } from '../../../../services/product-actions.service';
 
 @Component({
-  selector: 'app-recent-item',
-  templateUrl: './recent-item.component.html',
-  styleUrls: ['./recent-item.component.css'],
+  selector: 'app-shop-product-area-item',
+  templateUrl: './shop-product-area-item.component.html',
+  styleUrls: ['./shop-product-area-item.component.css'],
 })
-export class RecentItemComponent implements OnInit {
+export class ShopProductAreaItemComponent implements OnInit {
   //
   math = Math;
   wishlisted: boolean = false;

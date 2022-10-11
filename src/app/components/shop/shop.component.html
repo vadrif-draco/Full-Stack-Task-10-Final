@@ -1,7 +1,17 @@
-<app-breadcrumb [breadcrumb_items]="['Home', 'Shop', 'Shop List']"></app-breadcrumb>
+<app-breadcrumb
+  [breadcrumb_items]="['Home', 'Shop', 'Shop List']"
+></app-breadcrumb>
 <div class="container-fluid">
-    <div class="row px-xl-5">
-        <app-shop-sidebar class="col-lg-3 col-md-4"></app-shop-sidebar>
-        <app-shop-product class="col-lg-9 col-md-8"></app-shop-product>
-    </div>
+  <div class="row px-xl-5">
+    <app-shop-filter-sidebar
+      class="col-lg-3 col-md-4"
+      (changePriceFilters)="updatePriceRangeFilters($event)"
+      (changeColorFilters)="updateColorFilters($event)"
+      (changeSizeFilters)="updateSizeFilters($event)"
+    ></app-shop-filter-sidebar>
+    <app-shop-product-area
+      class="col-lg-9 col-md-8"
+      [shopProductAreaItems]="shopProducts"
+    ></app-shop-product-area>
+  </div>
 </div>
