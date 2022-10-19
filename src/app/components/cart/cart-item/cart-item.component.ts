@@ -9,10 +9,11 @@ import { Product } from '../../../interfaces/product';
 })
 export class CartItemComponent implements OnInit {
   //
-  @Input() itemData: OrderItem = {} as OrderItem;
+  @Input() orderData: OrderItem = {} as OrderItem;
   @Output() incQuantity: EventEmitter<Product> = new EventEmitter();
   @Output() decQuantity: EventEmitter<Product> = new EventEmitter();
   @Output() delProduct: EventEmitter<Product> = new EventEmitter();
+
   constructor() {}
 
   ngOnInit(): void {}

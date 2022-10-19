@@ -1,0 +1,23 @@
+<div class="product-img position-relative overflow-hidden">
+  <img class="img-fluid w-100" [src]="imageUrl" [alt]="name" />
+  <div class="product-action">
+    <a
+      (click)="productActionsService.addToCartById(id)"
+      class="btn btn-outline-dark btn-square"
+      ><i class="fa fa-shopping-cart"></i
+    ></a>
+    <a (click)="wishlistToggle()" class="btn btn-outline-dark btn-square"
+      ><i class="fa-heart" [ngClass]="wishlisted ? 'fa wishlisted' : 'far'"></i
+    ></a>
+    <a
+      (click)="alert_('To be implemented')"
+      class="btn btn-outline-dark btn-square"
+      ><i class="fa fa-sync-alt"></i
+    ></a>
+    <a
+      class="btn btn-outline-dark btn-square"
+      [routerLink]="['/', 'detail', id]"
+      ><i class="fa fa-search"></i
+    ></a>
+  </div>
+</div>

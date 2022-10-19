@@ -1,0 +1,16 @@
+<app-item-preview-and-actions
+  [id]="itemData._id"
+  [name]="itemData.name"
+  [imageUrl]="itemData.image"
+></app-item-preview-and-actions>
+<div class="text-center py-4">
+  <app-item-name [id]="itemData._id" [name]="itemData.name"></app-item-name>
+  <app-item-price
+    [originalPrice]="itemData.price"
+    [discountedPrice]="(1 - itemData.discount) * itemData.price"
+  ></app-item-price>
+  <app-item-rating
+    [rating]="itemData.rating"
+    [rating_count]="itemData.rating_count"
+  ></app-item-rating>
+</div>

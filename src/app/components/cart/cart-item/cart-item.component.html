@@ -1,18 +1,20 @@
 <td class="align-middle">
   <img
-    [src]="itemData.product.imageUrl"
-    [alt]="itemData.product.name"
+    [src]="orderData.product.image"
+    [alt]="orderData.product.name"
     style="width: 50px"
   />
-  {{ itemData.product.name }}
+  {{ orderData.product.name }}
 </td>
-<td class="align-middle">{{ itemData.product.dprice | currency }}</td>
+<td class="align-middle">
+  {{ (1 - orderData.product.discount) * orderData.product.price | currency }}
+</td>
 <td class="align-middle">
   <div class="input-group quantity mx-auto" style="width: 100px">
     <div class="input-group-btn">
       <button
         class="btn btn-sm btn-primary btn-minus"
-        (click)="decQuantity.emit(itemData.product)"
+        (click)="decQuantity.emit(orderData.product)"
       >
         <i class="fa fa-minus"></i>
       </button>
@@ -20,12 +22,12 @@
     <input
       type="text"
       class="form-control form-control-sm bg-secondary border-0 text-center"
-      [value]="itemData.quantity"
+      [value]="orderData.quantity"
     />
     <div class="input-group-btn">
       <button
         class="btn btn-sm btn-primary btn-plus"
-        (click)="incQuantity.emit(itemData.product)"
+        (click)="incQuantity.emit(orderData.product)"
       >
         <i class="fa fa-plus"></i>
       </button>
@@ -33,12 +35,16 @@
   </div>
 </td>
 <td class="align-middle">
-  {{ itemData.product.dprice * itemData.quantity | currency }}
+  {{
+    (1 - orderData.product.discount) *
+      orderData.product.price *
+      orderData.quantity | currency
+  }}
 </td>
 <td class="align-middle">
   <button
     class="btn btn-sm btn-danger"
-    (click)="delProduct.emit(itemData.product)"
+    (click)="delProduct.emit(orderData.product)"
   >
     <i class="fa fa-times"></i>
   </button>

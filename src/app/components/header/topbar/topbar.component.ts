@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductActionsService } from '../../../services/product-actions.service';
+import { AuthService } from '../../../services/auth.service';
 
 @Component({
   selector: 'app-topbar',
@@ -8,11 +9,8 @@ import { ProductActionsService } from '../../../services/product-actions.service
 })
 export class TopbarComponent implements OnInit {
   //
-  constructor() {}
+  constructor(protected authService: AuthService) {}
 
   ngOnInit(): void {}
 
-  getOrdersNum(): number {
-    return 3;
-  }
 }

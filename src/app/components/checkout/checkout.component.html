@@ -1,1 +1,33 @@
-<p>checkout works!</p>
+<app-breadcrumb
+  [breadcrumb_items]="['Home', 'Shop', 'Checkout']"
+></app-breadcrumb>
+
+<div class="container-fluid">
+  <div class="row px-xl-5">
+    <div class="col-lg-8">
+      <!-- Billing Details -->
+      <app-customer-details-form
+        [formType]="'Billing'"
+        [customerData]="loginData"
+        (formGroupDataEmitter)="billingDetails = $event"
+      ></app-customer-details-form>
+      <!-- Shipping Details (Optional) -->
+      <div class="collapse mb-5" id="shipping-address">
+        <app-customer-details-form
+          [formType]="'Shipping'"
+          [customerData]="loginData"
+          (formGroupDataEmitter)="shippingDetails = $event"
+        ></app-customer-details-form>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <app-order-info></app-order-info>
+      <app-payment-section
+        (placeOrderEmitter)="submit()"
+        [placeOrderDisabled]="billingDetails.invalid"
+      ></app-payment-section>
+    </div>
+  </div>
+</div>
+<!-- When shippingDetails is used, don't forget to replace the above condition with: -->
+<!-- [placeOrderDisabled]="billingDetails.invalid && shippingDetails.invalid" -->

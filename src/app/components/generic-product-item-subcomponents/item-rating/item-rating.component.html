@@ -1,0 +1,15 @@
+<div class="d-flex align-items-center justify-content-center mb-1">
+  <small
+    *ngFor="let i of [].constructor(math.floor(rating) || 0)"
+    class="fa fa-star text-primary mr-1"
+  ></small>
+  <small
+    *ngIf="math.ceil(rating) !== math.floor(rating)"
+    class="fa fa-star-half-alt text-primary mr-1"
+  ></small>
+  <small
+    *ngFor="let i of [].constructor(5 - math.ceil(rating) || 0)"
+    class="far fa-star text-primary mr-1"
+  ></small>
+  <small>({{ rating_count }})</small>
+</div>

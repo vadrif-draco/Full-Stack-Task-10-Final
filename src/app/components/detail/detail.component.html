@@ -3,7 +3,10 @@
     [breadcrumb_items]="['Home', 'Shop', 'Product Details']"
   ></app-breadcrumb>
   <app-product-details [product]="product"></app-product-details>
-  <app-product-recommendations></app-product-recommendations>
+  <app-product-recommendations
+    [categoryId]="product.category_id"
+    (productsReady)="jqueryForCarousel()"
+  ></app-product-recommendations>
 </ng-template>
 
 <ng-template #shop_detail>
@@ -12,9 +15,6 @@
   ></app-breadcrumb>
   <div class="text-center text-black my-5 w-100">
     Hello! :)
-    <br />
-    <br />
-    I've made the decision that this page does not make sense.
     <br />
     <br />
     Instead of opening this page from the navigation bar "Shop Detail" item,

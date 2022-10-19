@@ -1,0 +1,7 @@
+.invalid label {
+  color: #dc3545 !important;
+}
+
+.invalid * {
+  border-color: #dc3545 !important;
+}

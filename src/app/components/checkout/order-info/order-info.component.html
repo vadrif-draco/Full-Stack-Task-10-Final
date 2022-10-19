@@ -1,0 +1,36 @@
+<h5 class="section-title position-relative text-uppercase mb-3">
+  <span class="bg-secondary pr-3">Order Total</span>
+</h5>
+<div class="bg-light p-30 mb-5">
+  <div class="border-bottom">
+    <h6 class="mb-3">Products</h6>
+    <div
+      *ngFor="let item of productActionsService.order.items"
+      class="d-flex justify-content-between"
+    >
+      <p>{{ item.product.name }}</p>
+      <p>
+        {{ (1 - item.product.discount) * item.product.price | currency }} ⨯
+        {{ item.quantity }}
+      </p>
+    </div>
+  </div>
+  <div class="border-bottom pt-3 pb-2">
+    <div class="d-flex justify-content-between mb-3">
+      <h6>Subtotal</h6>
+      <h6>{{ productActionsService.getCartSubtotal() | currency }}</h6>
+    </div>
+    <div class="d-flex justify-content-between">
+      <h6 class="font-weight-medium">Shipping</h6>
+      <h6 class="font-weight-medium">
+        {{ productActionsService.getCartShipping() | currency }}
+      </h6>
+    </div>
+  </div>
+  <div class="pt-2">
+    <div class="d-flex justify-content-between mt-2">
+      <h5>Total</h5>
+      <h5>{{ productActionsService.getCartTotal() | currency }}</h5>
+    </div>
+  </div>
+</div>

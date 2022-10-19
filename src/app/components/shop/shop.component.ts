@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from 'src/app/interfaces/product';
 import { ProductsService } from '../../services/products.service';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-shop',
@@ -17,11 +18,17 @@ export class ShopComponent implements OnInit {
   constructor(private shopProductsService: ProductsService) {}
 
   ngOnInit(): void {
-    this.shopProducts = this.shopProductsService.getAllProducts();
-    this.applyPriceRangeFilters();
-    this.applyColorFilters();
-    this.applySizeFilters();
-    console.log(this.shopProducts)
+    this.shopProductsService.getAllProducts().subscribe({
+      next: (response) => {
+        this.shopProducts = response.data;
+        this.applyPriceRangeFilters();
+        this.applyColorFilters();
+        this.applySizeFilters();
+        console.log(this.shopProducts);
+      },
+      error: (e: HttpErrorResponse) =>
+        console.log('Error fetching shop products: ', e.error),
+    });
   }
 
   updatePriceRangeFilters(e: //
@@ -58,10 +65,15 @@ export class ShopComponent implements OnInit {
     if (this.priceRanges.length == 0) return;
     if (this.priceRanges.some((priceRange) => priceRange.min == -1)) return;
     this.shopProducts = this.shopProducts.filter((product) =>
-      this.priceRanges.some(
-        (priceRange) =>
-          product.dprice > priceRange.min && product.dprice < priceRange.max
-      )
+      this.priceRanges.some((priceRange) => {
+        // Either apply the range on the discounted price or the original price, you pick
+        // ------------------------------------------------------------------------------
+        // let discPrice = (1 - product.discount) * product.price;
+        // return discPrice >= priceRange.min && discPrice < priceRange.max;
+        return (
+          product.price >= priceRange.min && product.price < priceRange.max
+        );
+      })
     );
   }
 

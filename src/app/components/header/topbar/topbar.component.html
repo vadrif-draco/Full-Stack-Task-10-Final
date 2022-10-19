@@ -16,11 +16,23 @@
             class="btn btn-sm btn-light dropdown-toggle"
             data-toggle="dropdown"
           >
-            My Account
+            {{authService.getFullName()}}
           </button>
           <div class="dropdown-menu dropdown-menu-right">
-            <button class="dropdown-item" type="button">Sign in</button>
-            <button class="dropdown-item" type="button">Sign up</button>
+            <ng-template [ngIf]="authService.hasLoginData()" [ngIfElse]="elseBlock">
+              <button class="dropdown-item" type="button" (click)="authService.logout()">
+                Logout
+              </button>
+            </ng-template>
+            <ng-template #elseBlock>
+              <button class="dropdown-item" type="button" routerLink="/login">
+                Sign in
+              </button>
+              <button class="dropdown-item" type="button" routerLink="/register">
+                Sign up
+              </button>
+            </ng-template>
+
           </div>
         </div>
         <div class="btn-group mx-2">

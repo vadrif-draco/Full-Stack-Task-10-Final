@@ -1,0 +1,159 @@
+<h5 class="section-title position-relative text-uppercase mb-3">
+  <span class="bg-secondary pr-3">{{ formType }} Address</span>
+</h5>
+<div class="bg-light p-30 mb-5">
+  <form [formGroup]="checkOutForm" class="row">
+    <div
+      class="col-md-6 form-group"
+      [class.invalid]="checkOutForm.controls['first_name'].invalid"
+    >
+      <label>First Name *</label>
+      <input type="text" class="form-control" formControlName="first_name" />
+    </div>
+    <div
+      class="col-md-6 form-group"
+      [class.invalid]="checkOutForm.controls['last_name'].invalid"
+    >
+      <label>Last Name *</label>
+      <input type="text" class="form-control" formControlName="last_name" />
+    </div>
+    <div
+      class="col-md-6 form-group"
+      [class.invalid]="checkOutForm.controls['email'].invalid"
+    >
+      <label>E-mail *</label>
+      <input type="email" class="form-control" formControlName="email" />
+    </div>
+    <div
+      class="col-md-6 form-group"
+      [class.invalid]="checkOutForm.controls['mobile_number'].invalid"
+    >
+      <label>Mobile No *</label>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="+123 456 789"
+        formControlName="mobile_number"
+      />
+    </div>
+    <div
+      class="col-md-6 form-group"
+      [class.invalid]="checkOutForm.controls['address1'].invalid"
+    >
+      <label>Address Line 1 *</label>
+      <input
+        class="form-control"
+        type="text"
+        placeholder="123 Street"
+        formControlName="address1"
+      />
+    </div>
+    <div
+      class="col-md-6 form-group"
+      [class.invalid]="checkOutForm.controls['address2'].invalid"
+    >
+      <label>Address Line 2</label>
+      <input
+        class="form-control"
+        type="text"
+        placeholder="123 Street"
+        formControlName="address2"
+      />
+    </div>
+    <div
+      class="col-md-6 form-group"
+      [class.invalid]="checkOutForm.controls['country'].invalid"
+    >
+      <label>Country *</label>
+      <select class="custom-select" formControlName="country">
+        <option>Algeria</option>
+        <option>Bahrain</option>
+        <option>Comoros</option>
+        <option>Djibouti</option>
+        <option>Egypt</option>
+        <option>Iraq</option>
+        <option>Jordan</option>
+        <option>Kuwait</option>
+        <option>Lebanon</option>
+        <option>Libya</option>
+        <option>Mauritania</option>
+        <option>Morocco</option>
+        <option>Oman</option>
+        <option>Palestine</option>
+        <option>Ramallah</option>
+        <option>Qatar</option>
+        <option>Saudi Arabia</option>
+        <option>Somalia</option>
+        <option>Sudan</option>
+        <option>Syria</option>
+        <option>Tunisia</option>
+        <option>United Arab Emirates</option>
+        <option>Yemen</option>
+      </select>
+    </div>
+    <div
+      class="col-md-6 form-group"
+      [class.invalid]="checkOutForm.controls['city'].invalid"
+    >
+      <label>City *</label>
+      <input
+        class="form-control"
+        type="text"
+        placeholder="Cairo"
+        formControlName="city"
+      />
+    </div>
+    <div
+      class="col-md-6 form-group"
+      [class.invalid]="checkOutForm.controls['state'].invalid"
+    >
+      <label>State *</label>
+      <input
+        class="form-control"
+        type="text"
+        placeholder="Zamalek"
+        formControlName="state"
+      />
+    </div>
+    <div
+      class="col-md-6 form-group"
+      [class.invalid]="checkOutForm.controls['zip_code'].invalid"
+    >
+      <label>ZIP Code *</label>
+      <input
+        class="form-control"
+        type="text"
+        placeholder="123"
+        formControlName="zip_code"
+      />
+    </div>
+    <div *ngIf="formType == 'Billing'" class="col-md-12">
+      <div class="custom-control custom-checkbox">
+        <!-- <input
+          type="checkbox"
+          class="custom-control-input"
+          id="shipto"
+        /> -->
+        <input
+          type="checkbox"
+          class="custom-control-input"
+          id="shipto"
+          disabled
+        />
+        <!-- <label
+          class="custom-control-label"
+          for="shipto"
+          data-toggle="collapse"
+          data-target="#shipping-address"
+          >Ship to different address</label
+        > -->
+        <label class="custom-control-label" for="shipto" disabled
+          >Ship to different address
+          <p class="text-info">
+            (API does not currently support this feature)
+          </p></label
+        >
+      </div>
+    </div>
+  </form>
+</div>

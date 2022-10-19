@@ -8,7 +8,6 @@
       class="col-lg-3 col-md-4 col-sm-6 pb-1"
       *ngFor="let item of wishlistedProducts"
       [itemData]="item"
-      (wishlistChange)="reload()"
     ></app-wishlist-item>
   </div>
   <div *ngIf="wishlistedProducts.length == 0">

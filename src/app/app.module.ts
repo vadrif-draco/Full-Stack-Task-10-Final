@@ -36,6 +36,18 @@ import { ShopProductAreaPagesizeComponent } from './components/shop/shop-product
 import { ShopProductAreaPaginationComponent } from './components/shop/shop-product-area/shop-product-area-pagination/shop-product-area-pagination.component';
 import { ProductDetailsComponent } from './components/detail/product-details/product-details.component';
 import { ProductRecommendationsComponent } from './components/detail/product-recommendations/product-recommendations.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { ItemPreviewAndActionsComponent } from './components/generic-product-item-subcomponents/item-preview-and-actions/item-preview-and-actions.component';
+import { ItemRatingComponent } from './components/generic-product-item-subcomponents/item-rating/item-rating.component';
+import { ItemNameComponent } from './components/generic-product-item-subcomponents/item-name/item-name.component';
+import { ItemPriceComponent } from './components/generic-product-item-subcomponents/item-price/item-price.component';
+import { RecommendedItemComponent } from './components/detail/product-recommendations/recommended-item/recommended-item.component';
+import { VendorComponent } from './components/home/vendor/vendor.component';
+import { OrderInfoComponent } from './components/checkout/order-info/order-info.component';
+import { PaymentSectionComponent } from './components/checkout/payment-section/payment-section.component';
+import { CustomerDetailsFormComponent } from './components/checkout/customer-details-form/customer-details-form.component';
 
 @NgModule({
   declarations: [
@@ -72,8 +84,24 @@ import { ProductRecommendationsComponent } from './components/detail/product-rec
     ShopProductAreaPaginationComponent,
     ProductDetailsComponent,
     ProductRecommendationsComponent,
+    LoginComponent,
+    RegisterComponent,
+    ItemPreviewAndActionsComponent,
+    ItemRatingComponent,
+    ItemNameComponent,
+    ItemPriceComponent,
+    RecommendedItemComponent,
+    VendorComponent,
+    OrderInfoComponent,
+    PaymentSectionComponent,
+    CustomerDetailsFormComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

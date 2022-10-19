@@ -1,0 +1,106 @@
+<div class="container my-5 col-lg-4 col-md-8 col-sm-12">
+  <form [formGroup]="registrationForm" (ngSubmit)="register()">
+    <div class="my-5"><br /></div>
+    <div class="my-3 input-group">
+      <label class="input-group-text w-25" for="email">First Name</label>
+      <input
+        class="form-control input-group-append"
+        placeholder="Enter your first name"
+        formControlName="first_name"
+        type="text"
+      />
+    </div>
+    <div class="my-3 input-group">
+      <label class="input-group-text w-25" for="email">Last Name</label>
+      <input
+        class="form-control input-group-append"
+        placeholder="Enter your last name"
+        formControlName="last_name"
+        type="text"
+      />
+    </div>
+    <div class="my-3 input-group">
+      <label class="input-group-text w-25" for="email">Email</label>
+      <input
+        class="form-control input-group-append"
+        placeholder="Enter your email"
+        formControlName="email"
+        type="email"
+      />
+    </div>
+    <div class="my-3 input-group">
+      <label class="input-group-text w-25" for="password">Password</label>
+      <input
+        class="form-control input-group-append"
+        placeholder="Enter your password"
+        formControlName="password"
+        type="password"
+      />
+    </div>
+    <div class="my-3 input-group">
+      <label class="input-group-text w-25" for="password">Confirmation</label>
+      <input
+        class="form-control input-group-append"
+        placeholder="Enter your password again"
+        formControlName="password_confirm"
+        type="password"
+      />
+    </div>
+    <div class="my-5 row justify-content-center">
+      <button
+        type="submit"
+        class="btn btn-primary"
+        [disabled]="!registrationForm.valid"
+      >
+        Register
+      </button>
+    </div>
+    <div
+      *ngIf="registrationForm.controls['first_name']?.errors?.['required']"
+      class="row justify-content-center text-danger"
+    >
+      First name cannot be empty
+    </div>
+    <div
+      *ngIf="registrationForm.controls['last_name']?.errors?.['required']"
+      class="row justify-content-center text-danger"
+    >
+      Last name cannot be empty
+    </div>
+    <div
+      *ngIf="registrationForm.controls['email']?.errors?.['required']"
+      class="row justify-content-center text-danger"
+    >
+      Email cannot be empty
+    </div>
+    <div
+      *ngIf="registrationForm.controls['email']?.errors?.['email']"
+      class="row justify-content-center text-danger"
+    >
+      Email must have a correct format
+    </div>
+    <div
+      *ngIf="registrationForm.controls['password']?.errors?.['required']"
+      class="row justify-content-center text-danger"
+    >
+      Password cannot be empty
+    </div>
+    <div
+      *ngIf="registrationForm.controls['password']?.errors?.['minlength']"
+      class="row justify-content-center text-danger"
+    >
+      Password length must be more than 6 characters
+    </div>
+    <div
+      *ngIf="registrationForm.errors?.['matching']"
+      class="row justify-content-center text-danger"
+    >
+      Passwords do not match
+    </div>
+    <div *ngIf="!registrationForm.controls['first_name']?.errors"><br /></div>
+    <div *ngIf="!registrationForm.controls['last_name']?.errors"><br /></div>
+    <div *ngIf="!registrationForm.controls['email']?.errors"><br /></div>
+    <div *ngIf="!registrationForm.controls['password']?.errors"><br /></div>
+    <div *ngIf="!registrationForm?.errors"><br /></div>
+  </form>
+</div>

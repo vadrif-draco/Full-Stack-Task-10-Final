@@ -38,7 +38,7 @@ export class ShopProductAreaComponent implements OnInit {
   }
 
   private checkPageCurrent(): void {
-    this.pageCurrent = Math.min(this.pageCurrent, this.numOfPages - 1);
+    this.pageCurrent = Math.max(Math.min(this.pageCurrent, this.numOfPages - 1), 0);
   }
 
   updatePageCurrent(newPageCurrent: number) {
