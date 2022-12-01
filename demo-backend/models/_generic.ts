@@ -36,7 +36,7 @@ export class _GenericModel {
   async getItemByID(ID: string) {
 
     let item = await findInCollection(this.coll_name, { _id: convertToObjectId(ID) })
-    if (item && item.length != 0) { return item[0] }
+    if (item.length != 0) { return item[0] }
     else { throw `Couldn't get ${this.item_label} with ID ${ID}; ${this.item_label} not found` }
 
   }
