@@ -25,6 +25,7 @@ import {
   addCategoryController,
   getCategoriesController
 } from './controllers/category.controllers';
+import { adminAuthGuard } from './admin.guard.middleware';
 
 export function loadUsersRoutes(USERS: Express) {
 
@@ -42,7 +43,7 @@ export function loadOrdersRoutes(ORDERS: Express) {
 
 export function loadProductsRoutes(PRODUCTS: Express) {
 
-  PRODUCTS.post("/", addProductController)
+  PRODUCTS.post("/", adminAuthGuard, addProductController)
   PRODUCTS.get("/", getProductsController)
   PRODUCTS.get("/getFeatured", getFeaturedProductsController)
   PRODUCTS.get("/getRecent", getRecentProductsController)
@@ -53,7 +54,7 @@ export function loadProductsRoutes(PRODUCTS: Express) {
 
 export function loadCategoriesRoutes(CATEGORIES: Express) {
 
-  CATEGORIES.post("/", addCategoryController)
+  CATEGORIES.post("/", adminAuthGuard, addCategoryController)
   CATEGORIES.get("/", getCategoriesController)
 
 }

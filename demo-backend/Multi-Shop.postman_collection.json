@@ -15,7 +15,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\":\"admin\",\r\n    \"password\":\"admin\"\r\n}",
+							"raw": "{\r\n    \"email\":\"admin@admin\",\r\n    \"password\":\"adminadmin\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -74,7 +74,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"sub_total_price\": 100.0,\r\n    \"shipping\": 10.0,\r\n    \"total_price\": 110.0,\r\n    \"user_id\": \"6346ac23bb862e01fe4b6535\",\r\n    \"order_date\": \"2022-01-01\",\r\n    \"order_details\": [\r\n        {\r\n            \"product_id\": \"6346c15ea060efd7cae40589\",\r\n            \"price\": 25,\r\n            \"qty\": 2\r\n        },\r\n        {\r\n            \"product_id\": \"6346c186a060efd7cae4058b\",\r\n            \"price\": 25,\r\n            \"qty\": 2\r\n        }\r\n    ],\r\n    \"shipping_info\": {\r\n        \"first_name\": \"Ramy\",\r\n        \"last_name\": \"Ibrahim\",\r\n        \"email\": \"ramymibrahim@yahoo.com\",\r\n        \"mobile_number\": \"01092812848\",\r\n        \"address1\": \"20 M A\",\r\n        \"address2\": \"\",\r\n        \"country\": \"Egypt\",\r\n        \"city\": \"Cairo\",\r\n        \"state\": \"Zamalek\",\r\n        \"zip_code\": \"11211\"\r\n    }\r\n}",
+							"raw": "{\r\n    \"sub_total_price\": 754.46,\r\n    \"shipping\": 751.44600000000001,\r\n    \"total_price\": 829.9060000000001,\r\n    \"user_id\": \"63890c9cd76d6c726e28ceda\",\r\n    \"order_date\": \"2022-12-01\",\r\n    \"order_details\": [\r\n        {\r\n            \"product_id\": \"63890c9cd76d6c726e28cedf\",\r\n            \"price\": 250.74,\r\n            \"qty\": 3\r\n        }\r\n    ],\r\n    \"shipping_info\": {\r\n        \"first_name\": \"admin\",\r\n        \"last_name\": \"admin\",\r\n        \"email\": \"admin@admin\",\r\n        \"mobile_number\": \"+201224254682\",\r\n        \"address1\": \"1234 Address St.\",\r\n        \"address2\": \"\",\r\n        \"country\": \"Egypt\",\r\n        \"city\": \"Cairo\",\r\n        \"state\": \"Giza\",\r\n        \"zip_code\": \"12828\"\r\n    }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -122,7 +122,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"name\": \"Product 6 Cat2\",\r\n  \"image\": \"assets/img/prod-6.jpg\",\r\n  \"category_id\": \"6346aed67c308ccff12e065c\",\r\n  \"price\": 110,\r\n  \"discount\": 0.25,\r\n  \"rating\": 3,\r\n  \"rating_count\": 120,\r\n  \"is_featured\": false,\r\n  \"is_recent\": true,\r\n  \"description\": \"Product 6 Cat2 Product 6 Cat2 Product 6 Cat2 Product 6 Cat2 Product 6 Cat2 Product 6 Cat2 Product 6 Cat2 Product 6 Cat2 Product 6 Cat2 Product 6 Cat2 Product 6 Cat2 \"\r\n}",
+							"raw": "        {\r\n            \"name\": \"Super Product 1 Cat 1\",\r\n            \"image\": \"assets/img/prod-1.jpg\",\r\n            \"category_id\": \"63890c9cd76d6c726e28ced6\",\r\n            \"description\": \"SSSSSSUPPPPPERRRRRRR Product 1 belongs to Category 1\",\r\n            \"price\": 2183,\r\n            \"discount\": 0.265,\r\n            \"rating\": 5,\r\n            \"rating_count\": 1207,\r\n            \"is_featured\": true,\r\n            \"is_recent\": true\r\n        }",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -219,14 +219,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{BASE_API_URL}}/products/getByCategoryId/6388ed843fe837f234400d29",
+							"raw": "{{BASE_API_URL}}/products/getByCategoryId/63890c9cd76d6c726e28ced6",
 							"host": [
 								"{{BASE_API_URL}}"
 							],
 							"path": [
 								"products",
 								"getByCategoryId",
-								"6388ed843fe837f234400d29"
+								"63890c9cd76d6c726e28ced6"
 							]
 						}
 					},
@@ -243,14 +243,14 @@
 						"method": "POST",
 						"header": [
 							{
-								"key": "x-access-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjM0NmFjMjNiYjg2MmUwMWZlNGI2NTM1IiwiZW1haWwiOiJyYW15bWlicmFoaW1AeWFob28uY29tIiwiaWF0IjoxNjY1NTc2Nzg2LCJleHAiOjE2NjU1ODM5ODZ9.mR4AMOtel6wA7L_YT0e3PT5pSAoV9fAsage5rTTKjIE",
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Mzg5MGM5Y2Q3NmQ2YzcyNmUyOGNlZGEiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2Njk5MzAwNDB9.1-krMCzvC-hMcoaNQZGIw00TZcFY2Y8N48q_3F4k07Q",
 								"type": "default"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\":\"category 2\",\r\n    \"image\":\"assets/img/cat-2.jpg\",\r\n    \"productCount\":0\r\n}",
+							"raw": "{\r\n    \"name\":\"category 2\",\r\n    \"image\":\"assets/img/cat-2.jpg\",\r\n    \"productCount\":55\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
