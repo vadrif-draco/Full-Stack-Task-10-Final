@@ -169,7 +169,7 @@ export async function insertInCollection(collectionName: string, item: any) {
 
 }
 
-export async function findInCollection(collectionName: string, query: any, options = {}) {
+export async function findInCollection(collectionName: string, query: any, options = {}): Promise<any> {
 
   return new Promise(async (resolve, reject) => {
 
