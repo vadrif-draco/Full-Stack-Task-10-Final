@@ -1,0 +1,32 @@
+{
+  "data": [
+    {
+      "__v": 0,
+      "_id": "category-1",
+      "name": "Category 1",
+      "image": "assets/img/cat-1.jpg",
+      "productCount": 3
+    },
+    {
+      "__v": 0,
+      "_id": "category-2",
+      "name": "Category 2",
+      "image": "assets/img/cat-2.jpg",
+      "productCount": 4
+    },
+    {
+      "__v": 0,
+      "_id": "category-3",
+      "name": "Category 3",
+      "image": "assets/img/cat-3.jpg",
+      "productCount": 1
+    },
+    {
+      "__v": 0,
+      "_id": "category-4",
+      "name": "Category 4",
+      "image": "assets/img/cat-4.jpg",
+      "productCount": 1
+    }
+  ]
+}

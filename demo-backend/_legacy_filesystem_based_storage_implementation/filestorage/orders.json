@@ -1,0 +1,90 @@
+{
+  "data": [
+    {
+      "shipping_info": {
+        "first_name": "Ahmad",
+        "last_name": "Salama",
+        "email": "18p8805@eng.asu.edu.eg",
+        "mobile_number": "+201224254682",
+        "address1": "123 Address St.",
+        "address2": "",
+        "country": "Egypt",
+        "city": "Cairo",
+        "state": "Giza",
+        "zip_code": "12828"
+      },
+      "_id": "635066bf0804c41d3fcbbf38",
+      "sub_total_price": 1215.65,
+      "shipping": 121.56500000000001,
+      "total_price": 1337.2150000000001,
+      "user_id": "635066ae0804c41d3fcbbf33",
+      "order_date": "2022-10-19T00:00:00.000Z",
+      "order_details": [
+        {
+          "product_id": "6346c186a060efd7cae4058b",
+          "price": 69.7,
+          "qty": 5
+        },
+        {
+          "product_id": "6346c216a060efd7cae40591",
+          "price": 82.5,
+          "qty": 6
+        },
+        {
+          "product_id": "6346c1aea060efd7cae4058d",
+          "price": 94.05,
+          "qty": 3
+        },
+        {
+          "product_id": "6346c15ea060efd7cae40589",
+          "price": 90,
+          "qty": 1
+        }
+      ],
+      "__v": 0
+    },
+    {
+      "shipping_info": {
+        "first_name": "Ahmad",
+        "last_name": "Salama",
+        "email": "18p8805@eng.asu.edu.eg",
+        "mobile_number": "+201224254682",
+        "address1": "123 Address St.",
+        "address2": "",
+        "country": "Egypt",
+        "city": "Cairo",
+        "state": "Giza",
+        "zip_code": "12828"
+      },
+      "_id": "635066bf0804c41d3fcbbf38",
+      "sub_total_price": 1215.65,
+      "shipping": 121.56500000000001,
+      "total_price": 1337.2150000000001,
+      "user_id": "635066ae0804c41d3fcbbf33",
+      "order_date": "2022-10-19T00:00:00.000Z",
+      "order_details": [
+        {
+          "product_id": "6346c186a060efd7cae4058b",
+          "price": 69.7,
+          "qty": 5
+        },
+        {
+          "product_id": "6346c216a060efd7cae40591",
+          "price": 82.5,
+          "qty": 6
+        },
+        {
+          "product_id": "6346c1aea060efd7cae4058d",
+          "price": 94.05,
+          "qty": 3
+        },
+        {
+          "product_id": "6346c15ea060efd7cae40589",
+          "price": 90,
+          "qty": 1
+        }
+      ],
+      "__v": 0
+    }
+  ]
+}

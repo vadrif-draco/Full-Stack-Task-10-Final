@@ -1,0 +1,52 @@
+{
+  "data": [
+    {
+      "__v": 0,
+      "_id": "whatever1",
+      "name": "vendor-1",
+      "image": "assets/img/vendor-1.jpg"
+    },
+    {
+      "__v": 0,
+      "_id": "whatever2",
+      "name": "vendor-2",
+      "image": "assets/img/vendor-2.jpg"
+    },
+    {
+      "__v": 0,
+      "_id": "whatever3",
+      "name": "vendor-3",
+      "image": "assets/img/vendor-3.jpg"
+    },
+    {
+      "__v": 0,
+      "_id": "whatever4",
+      "name": "vendor-4",
+      "image": "assets/img/vendor-4.jpg"
+    },
+    {
+      "__v": 0,
+      "_id": "whatever5",
+      "name": "vendor-5",
+      "image": "assets/img/vendor-5.jpg"
+    },
+    {
+      "__v": 0,
+      "_id": "whatever6",
+      "name": "vendor-6",
+      "image": "assets/img/vendor-6.jpg"
+    },
+    {
+      "__v": 0,
+      "_id": "whatever7",
+      "name": "vendor-7",
+      "image": "assets/img/vendor-7.jpg"
+    },
+    {
+      "__v": 0,
+      "_id": "whatever8",
+      "name": "vendor-8",
+      "image": "assets/img/vendor-8.jpg"
+    }
+  ]
+}
