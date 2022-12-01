@@ -6,16 +6,18 @@ const mainDatabaseName = "MultiShopDB"
 // Only call if you want to erase everything in the database and re-populate with mock data
 // _repopulate_database()
 
+export const categoriesCollName = "Categories"
+const categoriesNum = 4
+
+export const productsCollName = "Products"
+const productsNum = 9
+
+export const vendorsCollName = "Vendors"
+const vendorsNum = 8
+
+export const usersCollName = "Users"
+
 function _repopulate_database(databaseName = mainDatabaseName): void {
-
-  let categoriesCollName = "Categories"
-  let categoriesNum = 4
-
-  let productsCollName = "Products"
-  let productsNum = 9
-
-  let vendorsCollName = "Vendors"
-  let vendorsNum = 8
 
   _connect().then((ret: { connObj: MongoClient; dbObj: Db; }) => {
 
@@ -84,6 +86,22 @@ function _repopulate_database(databaseName = mainDatabaseName): void {
         })
 
       }
+
+    })
+
+  }).then(() => {
+
+    createNewCollection(usersCollName).then(() => {
+
+      insertInCollection(usersCollName, {
+
+        first_name: "admin",
+        last_name: "admin",
+        email: "admin",
+        password: "$2b$10$1NVr5mT4Ows2vaLrv5a6UOsU1Wzu9oiXODptgF97mjxGlF2bBJ2w2",
+        isAdmin: true
+
+      })
 
     })
 
@@ -261,6 +279,14 @@ export async function removeFromCollection(collectionName: string, query = {}) {
 
 }
 
-export function convertToObjectId(ID: string) { return new ObjectId(ID) }
+export function convertToObjectId(ID: string): ObjectId {
 
-export function convertFromObjectId(objectId: ObjectId) { return objectId.toString() }
+  try {
+
+    return new ObjectId(ID)
+
+  } catch (ex) { return new ObjectId(0) }  
+
+}
+
+export function convertFromObjectId(objectId: ObjectId): string { return objectId.toString() }

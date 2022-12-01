@@ -1,4 +1,4 @@
-import { _GenericModel } from "./_generic"
+import { _GenericModel } from "./_generic.model"
 
 class CategoryModel extends _GenericModel {
 

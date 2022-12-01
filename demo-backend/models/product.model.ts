@@ -1,5 +1,5 @@
 import { convertToObjectId, findInCollection, categoriesCollName } from '../mongoutil';
-import { _GenericModel } from "./_generic"
+import { _GenericModel } from "./_generic.model"
 
 class ProductModel extends _GenericModel {
 

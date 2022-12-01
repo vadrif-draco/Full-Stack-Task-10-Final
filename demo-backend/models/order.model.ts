@@ -1,4 +1,4 @@
-import { _GenericModel } from "./_generic"
+import { _GenericModel } from "./_generic.model"
 
 class OrderModel extends _GenericModel {
 
