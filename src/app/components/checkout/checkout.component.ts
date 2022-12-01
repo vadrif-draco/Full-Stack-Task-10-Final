@@ -52,7 +52,7 @@ export class CheckoutComponent implements OnInit {
         console.log(v);
       },
       error: (e: HttpErrorResponse) => {
-        alert(`Error processing your order: ${e.error}`);
+        alert(`Error processing your order: ${e.error.message}`);
         console.log(e);
       },
     });

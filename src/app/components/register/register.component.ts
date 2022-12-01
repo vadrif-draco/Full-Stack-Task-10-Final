@@ -60,7 +60,7 @@ export class RegisterComponent implements OnInit {
         this.router.navigate(['/home']);
       },
       error: (e: HttpErrorResponse) => {
-        alert(e.error);
+        alert(e.error.message);
         console.log(e);
         this.registrationForm.reset();
         this.registrationForm.enable();

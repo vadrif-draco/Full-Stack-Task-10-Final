@@ -1,8 +1,6 @@
-import { ObjectId } from 'mongodb';
-
 export default interface Product {
 
-  _id: ObjectId,
+  _id: string,
   name: string, // "Product 7 Cat 2",
   image: string, // "assets/img/prod-7.jpg",
   category_id: string, // "category-2",

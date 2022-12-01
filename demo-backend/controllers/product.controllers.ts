@@ -27,8 +27,8 @@ export function getProductsController(req: Request, res: Response) {
 
   getProductsArr().then(
 
-    (value) => res.status(200).json({ products: value }),
-    (error) => res.status(400).json({ message: error, products: [] })
+    (value) => res.status(200).json({ data: value }),
+    (error) => res.status(400).json({ message: error, data: [] })
 
   )
 
@@ -38,8 +38,8 @@ export function getFeaturedProductsController(req: Request, res: Response) {
 
   getFeaturedProductsArr().then(
 
-    (value) => res.status(200).json({ products: value }),
-    (error) => res.status(400).json({ message: error, products: [] })
+    (value) => res.status(200).json({ data: value }),
+    (error) => res.status(400).json({ message: error, data: [] })
 
   )
 
@@ -49,8 +49,8 @@ export function getRecentProductsController(req: Request, res: Response) {
 
   getRecentProductsArr().then(
 
-    (value) => res.status(200).json({ products: value }),
-    (error) => res.status(400).json({ message: error, products: [] })
+    (value) => res.status(200).json({ data: value }),
+    (error) => res.status(400).json({ message: error, data: [] })
 
   )
 
@@ -60,8 +60,8 @@ export function getProductByIDController(req: Request, res: Response) {
 
   getProductById(req.params['id']).then(
 
-    (value) => res.status(200).json({ product: value }),
-    (error) => res.status(404).json({ message: error, product: null })
+    (value) => res.status(200).json({ data: value }),
+    (error) => res.status(404).json({ message: error, data: null })
 
   )
 
@@ -71,8 +71,8 @@ export function getProductsByCategoryIDController(req: Request, res: Response) {
 
   getProductsByCategoryID(req.params['cat_id']).then(
 
-    (value) => res.status(200).json({ products: value }),
-    (error) => res.status(404).json({ message: error, products: [] })
+    (value) => res.status(200).json({ data: value }),
+    (error) => res.status(404).json({ message: error, data: [] })
 
   )
 

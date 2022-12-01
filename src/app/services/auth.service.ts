@@ -62,11 +62,12 @@ export class AuthService {
 
   loadLoginData(): any {
     let loginDataRaw = localStorage.getItem('loginData');
-    return loginDataRaw ? JSON.parse(loginDataRaw) : '';
+    return loginDataRaw ? JSON.parse(loginDataRaw)?.data.user : '';
   }
 
   getLoginToken(): string {
-    return this.loadLoginData()?.token;
+    let loginDataRaw = localStorage.getItem('loginData');
+    return loginDataRaw ? JSON.parse(loginDataRaw).data["x-access-token"] : '';
   }
 
   getFullName(): string {

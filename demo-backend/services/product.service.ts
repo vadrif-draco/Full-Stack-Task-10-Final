@@ -1,15 +1,19 @@
-import { categoriesCollName, findInCollection, insertInCollection, productsCollName } from '../mongoutil';
+import { categoriesCollName, findInCollection, insertInCollection, productsCollName, convertToObjectId } from '../mongoutil';
 import Product from '../interfaces/product.interface';
 import { productModel } from '../models/product.model';
 
 export async function addProduct(productData: Product) {
 
-  findInCollection(categoriesCollName, { _id: productData.category_id }).then(
-
-    (value) => { insertInCollection(productsCollName, productData) },
-    (error) => { throw `Category associated with product not found; ${error}` }
-
-  )
+  try {
+    let categories = await findInCollection(categoriesCollName, { _id: convertToObjectId(productData.category_id) })
+    if (categories.length > 0) {
+      return insertInCollection(productsCollName, productData)
+    } else {
+      throw `Category associated with product not found`
+    }
+  } catch (error) {
+    throw error
+  }
 
 }
 

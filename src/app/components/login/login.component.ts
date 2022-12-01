@@ -27,11 +27,12 @@ export class LoginComponent implements OnInit {
     this.loginForm.disable();
     this.authService.login(this.loginForm.value).subscribe({
       next: (data) => {
+        console.log(data)
         this.authService.saveLoginData(data);
         this.router.navigate(['/home']);
       },
       error: (e: HttpErrorResponse) => {
-        alert(e.error);
+        alert(e.error.message);
         console.log(e);
         this.loginForm.reset();
         this.loginForm.enable();

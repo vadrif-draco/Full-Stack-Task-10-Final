@@ -14,8 +14,8 @@ export function loginController(req: Request, res: Response) {
 
     loginUser(req.body).then(
 
-      (value) => res.status(201).json({ message: "User has logged in successfully", token: value }),
-      (error) => res.status(404).json({ message: error, token: null })
+      (value) => res.status(201).json({ message: "User has logged in successfully", data: value }),
+      (error) => res.status(404).json({ message: error, data: null })
 
     )
 
@@ -35,8 +35,8 @@ export function registerController(req: Request, res: Response) {
 
     registerUser(req.body).then(
 
-      (value) => res.status(201).json({ message: "User has been registered successfully", id: value }),
-      (error) => res.status(404).json({ message: error, id: null })
+      (value) => res.status(201).json({ message: "User has been registered successfully", data: value }),
+      (error) => res.status(404).json({ message: error, data: null })
 
     )
 

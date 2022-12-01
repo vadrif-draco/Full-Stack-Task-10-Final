@@ -22,8 +22,9 @@ export class CategoriesService {
   //   ];
   constructor(private httpClient: HttpClient) {}
   getCategories(): Observable<CategoriesResponse> {
-    return this.httpClient.get<CategoriesResponse>(
+    let categories = this.httpClient.get<CategoriesResponse>(
       `${environment.apiURL}/categories`
     );
+    return categories
   }
 }

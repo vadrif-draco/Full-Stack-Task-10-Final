@@ -7,12 +7,17 @@ export async function loginUser(userLoginInfo: { email: string, password: string
 
   try {
 
-    let user = await userModel.getUserByEmail(userLoginInfo.email)
+    let user: User = await userModel.getUserByEmail(userLoginInfo.email)
 
     // Validate credentials
     if (bcrypt.compareSync(userLoginInfo.password, user.password)) {
 
-      return jwt.sign({ _id: user._id, isAdmin: user.isAdmin }, '0') // Access Token
+
+      return {
+        user: user,
+        "x-access-token": jwt.sign({ _id: user._id, isAdmin: user.isAdmin }, '0')
+      }
+
 
     } else { throw `Invalid credentials` } // Wrong password for provided username
 

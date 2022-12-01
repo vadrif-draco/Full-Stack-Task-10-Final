@@ -23,21 +23,24 @@ export class ProductsService {
   constructor(private httpClient: HttpClient) {}
 
   getAllProducts(): Observable<ProductsResponse> {
-    return this.httpClient.get<ProductsResponse>(
+    let all_products = this.httpClient.get<ProductsResponse>(
       `${environment.apiURL}/products`
     );
+    return all_products
   }
 
   getRecentProducts(): Observable<ProductsResponse> {
-    return this.httpClient.get<ProductsResponse>(
+    let recent_products = this.httpClient.get<ProductsResponse>(
       `${environment.apiURL}/products/getRecent`
     );
+    return recent_products
   }
 
   getFeaturedProducts(): Observable<ProductsResponse> {
-    return this.httpClient.get<ProductsResponse>(
+    let featured_products = this.httpClient.get<ProductsResponse>(
       `${environment.apiURL}/products/getFeatured`
     );
+    return featured_products
   }
 
   getProductsByCategoryId(categoryId: string): Observable<ProductsResponse> {

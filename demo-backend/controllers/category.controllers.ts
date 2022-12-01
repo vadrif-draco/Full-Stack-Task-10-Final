@@ -14,8 +14,8 @@ export function addCategoryController(req: Request, res: Response) {
 
     addCategory(req.body).then(
 
-      (value) => res.status(201).json({ message: `Category added successfully with ID ${value}`, id: value }),
-      (error) => res.status(400).json({ message: error, id: null })
+      (value) => res.status(201).json({ message: `Category added successfully with ID ${value}`, data: value }),
+      (error) => res.status(400).json({ message: error, data: null })
 
     )
 
@@ -27,8 +27,8 @@ export async function getCategoriesController(req: Request, res: Response) {
 
   getCategoriesArr().then(
 
-    (value) => res.status(200).json({ categories: value }),
-    (error) => res.status(400).json({ message: error, categories: [] })
+    (value) => res.status(200).json({ data: value }),
+    (error) => res.status(400).json({ message: error, data: [] })
 
   )
 

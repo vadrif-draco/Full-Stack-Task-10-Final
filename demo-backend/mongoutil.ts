@@ -17,6 +17,8 @@ const vendorsNum = 8
 
 export const usersCollName = "Users"
 
+export const ordersCollName = "Orders"
+
 function _repopulate_database(databaseName = mainDatabaseName): void {
 
   _connect().then((ret: { connObj: MongoClient; dbObj: Db; }) => {
@@ -97,8 +99,8 @@ function _repopulate_database(databaseName = mainDatabaseName): void {
 
         first_name: "admin",
         last_name: "admin",
-        email: "admin",
-        password: "$2b$10$1NVr5mT4Ows2vaLrv5a6UOsU1Wzu9oiXODptgF97mjxGlF2bBJ2w2",
+        email: "admin@admin",
+        password: "$2b$10$eP6hqq6lxtyxfrjGSrBzFO.SQ9GBJztampTlfx9VJsgFym.p92wzW", // adminadmin
         isAdmin: true
 
       })
